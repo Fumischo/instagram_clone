@@ -3,25 +3,76 @@
   <head>
     <title>InstagramClone</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag('instafavi.png') %>
   </head>
 
-  <body>
-   <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+  <header>
+    <div class="container-fluid">
+      <%= link_to pictures_path do %>
+        <%= image_tag 'instafavi.png', height:45 %>
+      <% end %>
+      <%= link_to pictures_path do %>
+        <%= image_tag 'instalogo.png', class:"logo", height:70 %>
+      <% end %>
+      <% if logged_in? %>
+        <p class="header_right"><%= current_user.name %></p>
+      <% end %>
+  </header>
 
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
+  <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %><br>
     <% end %>
-  
-    <%= yield %>
+    <div class="insta_body">
+      <%= yield %>
+    </div>
   </body>
+
+  <footer>
+    <div class="container">
+      <% if logged_in? %>
+        <ul class="row">
+          <li class="col-xs-3 col-sm-3 col-md-3">
+            <%= link_to pictures_path do %>
+              <%= image_tag 'instahomealone.png', height:60 %>
+            <% end %>
+          </li>
+
+          <li class="col-xs-3 col-sm-3 col-md-3">
+            <%= link_to new_picture_path do %>
+              <%= image_tag 'instapost.png', height:57 %>
+            <% end %>
+          </li>
+
+          <li class="col-xs-3 col-sm-3 col-md-3">
+            <%= link_to user_path(current_user.id) do %>
+              <%= image_tag 'profile.png', height:50 %>
+            <% end %>
+          </li>
+
+          <li class="col-xs-3 col-sm-3 col-md-3">
+            <%= link_to session_path(current_user.id), method: :delete do%>
+              <%= image_tag 'logout.png', height:50 %>
+            <% end %>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="row">
+          <li class="col-xs-6 col-sm-6 col-md-6">
+            <%= link_to new_user_path do %>
+              <%= image_tag 'signup.png', height:45 %>
+            <% end %>
+          </li>
+
+          <li class="col-xs-6 col-sm-6 col-md-6">
+            <%= link_to new_session_path do %>
+              <%= image_tag 'login.png', height:45 %>
+            <% end %>
+          </li>
+      <% end %>
+    </div>
+  </footer>
 </html>
