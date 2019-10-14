@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: rgb(116, 186, 187);
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -26,10 +26,10 @@ a {
     color: #666;
   }
 
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+  // &:hover {
+  //   color: #fff;
+  //   background-color: rgb(158, 165, 99);
+  // }
 }
 
 th {
@@ -47,7 +47,7 @@ div {
 }
 
 #notice {
-  color: green;
+  color: rgb(0, 0, 0);
 }
 
 .field_with_errors {
