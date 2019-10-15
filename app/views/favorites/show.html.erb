@@ -1,0 +1,11 @@
+<h2>Your Favorite</h2>
+
+<% @favorite.each do |picture| %>
+<tr>
+  <td><%= image_tag picture.image.url %></td>
+  <td><%= picture.content %></td>
+  <td><%= picture.user.name %></td>
+</tr>
+
+<br>
+  <%= link_to "back", picutre_path, class:"btn btn-link" %>
