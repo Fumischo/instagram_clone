@@ -2,7 +2,7 @@
 lock '3.6.0'
 
 set :application, 'achieve'
-set :repo_url, 'git@github.com:Fumischo/instagram_clone.git'
+set :repo_url, 'https://github.com/Fumischo/instagram_clone.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
