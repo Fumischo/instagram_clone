@@ -50,4 +50,4 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-gem 'tzinfo-data' 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
