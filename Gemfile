@@ -22,13 +22,10 @@ gem 'mini_racer', platforms: :ruby
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
 
-
-
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'dotenv-rails'
   gem 'capistrano', '3.6.0' 
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
